@@ -16,7 +16,7 @@ import Root from "./Root";
 
 export default function Navigation() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/billing-rsa-web">
             <Routes>
                 <Route element={<Authenticated />}>
                     <Route path="/" element={<Root />}>
