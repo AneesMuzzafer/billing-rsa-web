@@ -2,12 +2,14 @@ import { Chip, Container, Paper, TextField, Typography, Box, Button } from "@mui
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../state/hook";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers'
+import { LocalizationProvider, DesktopDateTimePicker } from '@mui/x-date-pickers'
 // import DateAdapter from '@mui/lab/AdapterDayjs';
 // import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DesktopDateTimePicker from '@mui/lab/DesktopDateTimePicker';
+// import DesktopDateTimePicker from '@mui/lab/DesktopDateTimePicker';
+// import { DesktopDateTimePicker } from '@mui/x-date-pickers';
 import { DownTime, updateOne } from "../state/billSlice";
 import { roundToTwo } from "../utils/billCalcUtil";
+import dayjs from 'dayjs';
 
 interface IBillEditProps {
     id: string;
@@ -95,17 +97,19 @@ const BillDataEditor: React.FC<IBillEditProps> = ({ id, onUpdate }) => {
                                     <Box sx={{ marginX: 2 }}>
                                         <DesktopDateTimePicker
                                             label="Started At"
-                                            value={new Date(downtime.startedAt)}
+                                            value={dayjs(downtime.startedAt)}
                                             onChange={(newValue: any) => handleTimeChange(newValue, "s", index)}
-                                            renderInput={(params: any) => <TextField {...params} />}
+                                            slotProps={{ textField: { variant: 'outlined' } }}
+                                            // renderInput={(params: any) => <TextField {...params} />}
                                         />
                                     </Box>
                                     <Box sx={{ marginX: 2 }}>
                                         <DesktopDateTimePicker
                                             label="Resolved At"
-                                            value={new Date(downtime.resolvedAt)}
+                                            value={dayjs(downtime.resolvedAt)}
+                                            slotProps={{ textField: { variant: 'outlined' } }}
                                             onChange={(newValue: any) => handleTimeChange(newValue, "r", index)}
-                                            renderInput={(params: any) => <TextField {...params} />}
+                                            // renderInput={(params: any) => <TextField {...params} />}
                                         />
                                     </Box>
                                     <Chip label={roundToTwo((downtime.downtime / 3600000)) + " hours"} color="primary" variant="outlined" sx={{ fontWeight: "bold", marginRight: 2 }} />

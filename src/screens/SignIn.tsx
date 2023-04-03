@@ -28,8 +28,8 @@ const SignInScreen = () => {
         <Container >
             <Box sx={{ height: "70vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Box sx={{ width: "30%", border: "solid 1px grey", borderRadius: "6px", display: "flex", flexDirection: "column", gap: "20px", padding: "20px", justifyContent: "center", alignItems: "center" }}>
-                    <Box sx={{display: "flex", gap: "20px", border: "solid 0px red", alignItems: "center"}}>
-                        <img src="./pgcil.png" style={{width: "50px", height: "50px"}}/>
+                    <Box sx={{ display: "flex", gap: "20px", border: "solid 0px red", alignItems: "center" }}>
+                        <img src="./pgcil.png" style={{ width: "50px", height: "50px" }} />
                         <Typography variant="h6" color="primary" fontWeight={"bold"} my={5} >POWERGRID BILL UTILITY</Typography>
                     </Box>
                     <TextField
