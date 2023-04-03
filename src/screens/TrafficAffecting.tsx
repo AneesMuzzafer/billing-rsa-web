@@ -102,7 +102,7 @@ const TicketAffecting = () => {
                     tickets.map((ticket, index) => {
                         const abled = networkArray[ticket.firstMatchRefIndex].vendor === "sanguine";
                         return (
-                            <TrafficAffectingRow key={ticket.id} thisTicket={ticket} disabled={!abled} isAffecting={ticket.trafficAffected} selected={selected} handleChange={(t) => handleChange(t)} onPress={(t) =>  setSelected(t)} />
+                            <TrafficAffectingRow key={ticket.id} thisTicket={ticket} disabled={false} isAffecting={ticket.trafficAffected} selected={selected} handleChange={(t) => handleChange(t)} onPress={(t) =>  setSelected(t)} />
                         );
                     })
                 }
