@@ -56,12 +56,14 @@ const BillView = () => {
 
                 billItemArray.forEach(item => {
                     if (item.service.node.id === ticketNodeID && item.month === month) {
-                        item.downtimes.push({
-                            id: ticket.id,
-                            startedAt: ticket.ticketStartedAt,
-                            resolvedAt: ticket.ticketResolvedAt,
-                            downtime: ticket.ticketResolvedAt - ticket.ticketStartedAt,
-                        })
+                        if(ticket.trafficAffected) {
+                            item.downtimes.push({
+                                id: ticket.id,
+                                startedAt: ticket.ticketStartedAt,
+                                resolvedAt: ticket.ticketResolvedAt,
+                                downtime: ticket.ticketResolvedAt - ticket.ticketStartedAt,
+                            })
+                        }
                     }
                 })
             });

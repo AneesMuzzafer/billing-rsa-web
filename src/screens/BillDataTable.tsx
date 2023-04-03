@@ -119,7 +119,7 @@ const BillDataTable: React.FC<IBillDateTable> = ({ vendor, month, onExpand }) =>
             type: 'number',
             width: 140,
             editable: true,
-            valueGetter: (params: GridValueGetterParams) => roundToTwo(params.row.downtime / 3600000)
+            valueGetter: (params: GridValueGetterParams) => params.row.downtime
         },
         {
             field: 'uptimePercent',
@@ -140,13 +140,20 @@ const BillDataTable: React.FC<IBillDateTable> = ({ vendor, month, onExpand }) =>
             type: 'number',
             width: 110,
             editable: true,
-            valueGetter: (params: GridValueGetterParams) => getSlab(params.row.penaltySlab)
+            valueGetter: (params: GridValueGetterParams) => params.row.penaltySlab
         },
         {
             field: 'penaltyHours',
-            headerName: 'Penalty',
+            headerName: 'Penalty Hrs',
             type: 'number',
             width: 110,
+            editable: true,
+        },
+        {
+            field: 'penaltyAmount',
+            headerName: 'Penalty Amount',
+            type: 'number',
+            width: 140,
             editable: true,
         },
         {
