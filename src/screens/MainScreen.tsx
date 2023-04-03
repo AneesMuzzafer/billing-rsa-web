@@ -21,7 +21,7 @@ const MainScreen = () => {
         let tickets = await processCsv(ticketFile);
 
         if (settings.enableFastTrafficAffecting) {
-            tickets = tickets.filter(t => t["Remarks"].includes("$yes$"));
+            tickets = tickets.filter(t => t["Remarks"].includes("$YES$"));
         }
 
         const parsedLinks = doFuzzySearch(tickets, networkArray);

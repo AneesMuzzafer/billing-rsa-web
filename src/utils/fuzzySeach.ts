@@ -14,6 +14,7 @@ export const doFuzzySearch = (ticketArray: TicketObject[], links: INode[]) => {
         includeScore: true
     });
 
+
     let parsedResult: ParsedTicket[] = [];
     ticketArray.forEach(ticket => {
         if (ticket.Title) {

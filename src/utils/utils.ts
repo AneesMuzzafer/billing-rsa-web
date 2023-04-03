@@ -139,6 +139,7 @@ export const processBillCsv = async (csvFile: object, vendors: IVendor[], nodes:
 }
 
 export const getStartEndTime = (parsedTickets: ParsedTicket[]) => {
+
     let lowest = parsedTickets[0].ticketStartedAt;
     let highest = parsedTickets[0].ticketResolvedAt;
 
