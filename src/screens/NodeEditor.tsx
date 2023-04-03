@@ -67,7 +67,7 @@ const NodeEditor = () => {
                             value={node.region}
                             onChange={(e) => setNode({ ...node, region: e.target.value })} />
                     </Box>
-                    {node.id && vendors.length > 0 && <Autocomplete
+                    {vendors.length > 0 && <Autocomplete
                         disablePortal
                         clearOnEscape
                         id="combo-box-demo"

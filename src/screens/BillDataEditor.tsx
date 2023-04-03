@@ -1,8 +1,10 @@
 import { Chip, Container, Paper, TextField, Typography, Box, Button } from "@mui/material";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../state/hook";
-import DateAdapter from '@mui/lab/AdapterDayjs';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+// import DateAdapter from '@mui/lab/AdapterDayjs';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DesktopDateTimePicker from '@mui/lab/DesktopDateTimePicker';
 import { DownTime, updateOne } from "../state/billSlice";
 import { roundToTwo } from "../utils/billCalcUtil";
@@ -58,7 +60,7 @@ const BillDataEditor: React.FC<IBillEditProps> = ({ id, onUpdate }) => {
     }
 
     return (
-        <LocalizationProvider dateAdapter={DateAdapter}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Container sx={{ paddingTop: 5 }}>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                     <Typography variant="h5" sx={{ color: "darkturquoise", textDecorationLine: "underline", marginBottom: 2 }}>{bill?.service.name}</Typography>
