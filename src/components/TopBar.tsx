@@ -29,7 +29,7 @@ export default function TopBar() {
             <AppBar position="static">
                 <Toolbar>
                     <Link style={{ color: 'inherit', textDecoration: 'inherit', flexGrow: 1, display: "flex", gap: "20px", alignItems: "center" }} to="/">
-                        <img src="pgcil.png" style={{ width: "50px", height: "50px" }} />
+                        <img src="/billing-rsa-web/pgcil.png" style={{ width: "50px", height: "50px" }} />
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             POWERGRID BILL UTILITY
                         </Typography>
